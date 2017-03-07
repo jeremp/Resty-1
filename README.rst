@@ -136,6 +136,12 @@ JSON Sample for paths above::
 	json(path("workflows")).json(path("current")).json(path("levels[displayName='Incoming'].href")).
 	json(path("ruleSets[1].EngageRouting")).object();
 
+*Authenticate on a server with BasicAuth*::
+
+ Resty resty = new Resty();
+ resty.authenticate("http://my.server.with.auth", "username", "password".toCharArray());
+ TextResource text = resty.text("http://my.server.with.auth/aResource");
+
 Developers
 ===========
 
